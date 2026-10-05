@@ -161,6 +161,9 @@
         padding: 0 var(--pad);
       }
       .intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
         padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
       }
       .intro h1 {
@@ -182,6 +185,16 @@
         font-size: 1.25rem;
         line-height: 1.55;
         color: var(--text);
+      }
+      .photo {
+        display: block;
+        width: min(100%, 280px);
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 8px;
+        justify-self: center;
+        margin-top: 2.5rem;
       }
 
       section {
@@ -281,6 +294,15 @@
       @media (min-width: 52rem) {
         .menu-btn {
           display: none;
+        }
+        .intro {
+          grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+          align-items: center;
+          column-gap: clamp(3rem, 8vw, 7rem);
+        }
+        .photo {
+          justify-self: end;
+          margin-top: 0;
         }
         .bar {
           padding-block: 1.1rem;
@@ -388,13 +410,22 @@
 
     <main>
       <div class="intro">
-        <h1>Steven Iwan</h1>
-        <p class="role">Informatics Student</p>
-        <p class="lede">
-          Informatics student interested in game development, artificial
-          intelligence, and software development. Open to internships, project
-          opportunities, and collaboration.
-        </p>
+        <div class="intro-content">
+          <h1>Steven Iwan</h1>
+          <p class="role">Informatics Student</p>
+          <p class="lede">
+            Informatics student interested in game development, artificial
+            intelligence, and software development. Open to internships, project
+            opportunities, and collaboration.
+          </p>
+        </div>
+        <img
+          class="photo"
+          src="assets/img/profile.jpeg"
+          alt="Photo of Steven Iwan"
+          width="96"
+          height="96"
+        />
       </div>
 
       <section id="about">
